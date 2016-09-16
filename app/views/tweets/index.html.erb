@@ -18,18 +18,14 @@
       <p class="tweet-user">  <%= tweet.user.email %> </p>
 
       <p class="tweet-message">  <%= tweet.message %> </p>
-
       <div class="like-container">
       <%= link_to like_tweet_path(tweet), method: :put do %>
-        <div class="like-button">Like</div>
+      <div class="like-heart"><%= current_user.voted_as_when_voted_for(tweet) == true ? fa_icon("heart") : fa_icon("heart-o") %>
         <%end%>
 
-        <%= link_to dislike_tweet_path(tweet), method: :put do %>
-          <div class="like-button">Dislike</div>
-        <%end%>
-        Likes:
         <%= tweet.score %>
-        
+      </div>
+
         <% tweet.votes_for.voters.each do |voter| %>
           <%= "#{voter.email},  "%>
             <%end%>
@@ -55,12 +51,11 @@
           </div>
           <% end %>
     </div>
-
+<div class="tweet-seperator"></div>
 
 
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
