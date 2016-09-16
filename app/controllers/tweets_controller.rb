@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /tweets
   # GET /tweets.json
@@ -38,6 +38,17 @@ class TweetsController < ApplicationController
     end
   end
 
+  def upvote
+    #The first line of this method is the same as the function set_tweet.
+    #A before_action callback was set up for set_tweet and upvotes was included
+    @tweet.upvote_by current_user
+    redirect_to tweets_path
+  end
+
+  def downvote
+    @tweet.downvote_by current_user
+    redirect_to tweets_path
+end
   # PATCH/PUT /tweets/1
   # PATCH/PUT /tweets/1.json
   def update
