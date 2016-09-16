@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 #Allows for a social like system
 gem 'acts_as_votable'
+#Font awesome and shit
+gem "font-awesome-rails"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
