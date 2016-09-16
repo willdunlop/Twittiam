@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root 'pages#feed'
+  resources :tweets
+  root 'tweets#index'
+  # root 'pages#feed'
   get 'pages/feed'
-
   # root 'tweets#index'
 
   devise_for :users

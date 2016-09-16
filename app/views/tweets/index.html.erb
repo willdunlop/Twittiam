@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="tweets-h1">Tweets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <body>
+    <% @tweets.each do |tweet| %>
+    <div class="tweet-container">
+
+      <p class="tweet-user">  <%= tweet.user.email %> </p>
+
+      <p class="tweet-message">  <%= tweet.message %> </p>
+      </div>
+
+        <div class="tweet-action-container">
+          <%= link_to tweet do %>
+          <div class="edit-button">
+            View
+          </div>
+          <% end %>
+
+            <%= link_to edit_tweet_path(tweet) do %>
+            <div class="edit-button">
+              Edit
+          </div>
+          <% end %>
+
+            <%= link_to tweet, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <div class="edit-button">
+              Delete
+          </div>
+          <% end %>
+    </div>
+
+
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tweet', new_tweet_path %>

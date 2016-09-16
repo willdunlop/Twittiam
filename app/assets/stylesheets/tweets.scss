@@ -1,0 +1,54 @@
+// Place all the styles related to the Tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tweets-h1 {
+  text-align: center;
+}
+
+.newpost-button {
+  width: 100px;
+  height: 30px;
+  text-align:center;
+  background-color: #821759;
+  color: #fff;
+  padding-top: 4px;
+  margin: 3px 3px 3px 3px;
+  display:block;
+
+}
+
+.edit-button {
+  width: 100px;
+  height: 30px;
+  text-align:center;
+  background-color: #b61f5c;
+  color: #fff;
+  padding-top: 4px;
+  float:left;
+  margin: 0 3px 0 3px;
+  display: block;
+}
+
+.tweet-container {
+  width: 400px;
+  height: auto;
+  margin: 0 auto 0 auto;
+  box-shadow: 1px 1px 2px 5px rgba(0, 0, 0, 0.5)
+}
+
+.tweet-user {
+  font-size: 14px;
+  border-bottom-style: solid;
+  border-width: thin;
+}
+
+.tweet-message {
+  font-size: 22px;
+}
+
+.tweet-action-container {
+  width: 350px;
+  height: 50px;
+  margin: 0 auto 0 auto;
+}
