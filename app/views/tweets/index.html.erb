@@ -2,17 +2,11 @@
 
 <h1 class="tweets-h1">Tweets</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Message</th>
-      <th>User</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+
 
   <body>
     <% @tweets.each do |tweet| %>
+
     <div class="tweet-container">
 
       <p class="tweet-user">  <%= tweet.user.email %> </p>
@@ -51,12 +45,14 @@
           </div>
           <% end %>
     </div>
-<div class="tweet-seperator"></div>
+
+    <div class="tweet-seperator"></div>
 
 
     <% end %>
 
 
-<br>
-
-<%= link_to 'New Tweet', new_tweet_path %>
+    <%= link_to new_tweet_path do %>
+    <div class="newpost-button">New Tweet</div>
+    <% end %>
+</body>
